@@ -63,7 +63,7 @@ button
   display: none;
 }
   </style>
-  <script defer>
+  <script>
 'use strict'
 const DIGITS = '0123456789'
 const NUMBERS = /(-?[[0-9]+\.?[0-9]*|-?[0-9]*\.[0-9]+]|-?π|-?e)/
@@ -75,10 +75,13 @@ const FUNS_P = [ 'Px==', 'PX<=', 'PX>=' ]
 const PRES = NUMERIC + '!)'
 const POSTS = NUMERIC_SYMBOLS + '(√lscta'
 
-const inp = document.getElementById("inp")
-const oup = document.getElementById("oup")
-const keyset1 = document.getElementById("keyset_1")
-const keyset2 = document.getElementById("keyset_2")
+document.addEventListener("DOMContentLoaded", () =>
+{
+  const inp = document.getElementById("inp")
+  const oup = document.getElementById("oup")
+  const keyset1 = document.getElementById("keyset_1")
+  const keyset2 = document.getElementById("keyset_2")
+});
 
 let str, mem
 
