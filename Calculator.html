@@ -74,16 +74,15 @@ const FUNS_6 = [ 'arcsin', 'arccos', 'arctan' ]
 const FUNS_P = [ 'Px==', 'PX<=', 'PX>=' ]
 const PRES = NUMERIC + '!)'
 const POSTS = NUMERIC_SYMBOLS + '(√lscta'
+let inp, oup, keyset1, keyset2, str, mem
 
 document.addEventListener("DOMContentLoaded", () =>
 {
-  const inp = document.getElementById("inp")
-  const oup = document.getElementById("oup")
-  const keyset1 = document.getElementById("keyset_1")
-  const keyset2 = document.getElementById("keyset_2")
+  inp = document.getElementById("inp")
+  oup = document.getElementById("oup")
+  keyset1 = document.getElementById("keyset_1")
+  keyset2 = document.getElementById("keyset_2")
 });
-
-let str, mem
 
 String.prototype.splice = function(start, delCount, s)
 {
