@@ -71,7 +71,12 @@ const FUNS_P = [ 'Px==', 'PX<=', 'PX>=' ]
 const PRES = NUMERIC + '!)'
 const POSTS = NUMERIC_SYMBOLS + '(√lscta'
 
-let inp, oup, str, mem
+const inp = document.getElementById("inp")
+const oup = document.getElementById("oup")
+const keyset1 = document.getElementById("keyset_1")
+const keyset2 = document.getElementById("keyset_2")
+
+let str, mem
 
 String.prototype.splice = function(start, delCount, s)
 {
@@ -140,12 +145,6 @@ function at_most(n, k, p)
 }
 
 
-window.onload = () => {
-  inp = document.getElementById('inp')
-  oup = document.getElementById('oup')
-}
-
-
 function all_clear()
 {
   oup.innerHTML = '0'
@@ -175,9 +174,6 @@ function key_in(value)
 
 function change_keyset()
 {
-  const keyset_1 = document.getElementById('keyset_1')
-  const keyset_2 = document.getElementById('keyset_2')
-
   keyset1.classList.toggle("hidden")
   keyset2.classList.toggle("hidden")
 }
