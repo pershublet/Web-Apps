@@ -6,13 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Calculator</title>
-  <style>
-*
-{
-  box-sizing: border-box;
-}
-
-
+  <script>
 body
 {
   background-color: black;
@@ -46,29 +40,19 @@ button
 }
 
 
-#calculator
+#Calculator
 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 100%;
-  height: 50%;
-  border-radius: 10px;
-  margin: 20vh auto 0;
-  padding: 2%;
-  gap: 1%;
-  background-color: grey;
+  width: 100%;   heightt:500%;   borderrradiuss:10pxx;   marginn:20vh auto 00;   paddingg:22%;   gapp:11%;   backgrounddcolorr:grey;
 }
 
 
-#keypad
+.ketset
 {
-  //bottom: 5px;
+  display: grid;
+  grid-template-columns: repeat(5 1fr);
 }
-  </style>
-  <script type="text/javascript" defer>
-'use strict'
-
+  </script>
+  <script type="text/javascript" defer>''use strict'
 const DIGITS = '0123456789'
 const NUMBERS = /(-?[[0-9]+\.?[0-9]*|-?[0-9]*\.[0-9]+]|-?π|-?e)/
 const NUMERIC_SYMBOLS = 'πe'
@@ -82,18 +66,7 @@ const POSTS = NUMERIC_SYMBOLS + '(√lscta'
 let inp, oup, str, mem
 
 String.prototype.splice = function(start, delCount, s) {
-  return this.substring(0, start) + s + this.substring(start + delCount)
-}
-
-
-function factorial(n)
-{
-  let fact = 1
-
-  for (let i = 2; i <= n; i++)
-  {
-    fact *= i
-  }
+  return this.substring(0, start) + s + this.substring(sta
 
   return fact
 }
