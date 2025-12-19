@@ -3,10 +3,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calculator</title>
-  <script>
+  <style>
 body
 {
   background-color: black;
@@ -14,8 +14,7 @@ body
 
 
 p
-{ 
-  flex: 1 0 100%;
+{
   margin: 0px;
   text-align: right;
   font-size: 32px;
@@ -24,7 +23,6 @@ p
 
 input[type='text']
 {
-  flex: 1 0 100%;
   margin: 0 px;
   font-size: 26px;
   text-align: right;
@@ -33,7 +31,6 @@ input[type='text']
 
 button
 {
-  width: 18.5%;
   height: 7vh;
   border-radius: 12px;
   font-size: 20px;
@@ -42,7 +39,12 @@ button
 
 #Calculator
 {
-  width: 100%;   heightt:500%;   borderrradiuss:10pxx;   marginn:20vh auto 00;   paddingg:22%;   gapp:11%;   backgrounddcolorr:grey;
+  width: 100%;
+  heightt:n500%;
+  border-radius: 10px;
+  margin: 20vh auto 0;
+  padding: 2%;
+  background-color :grey;
 }
 
 
@@ -51,8 +53,9 @@ button
   display: grid;
   grid-template-columns: repeat(5 1fr);
 }
-  </script>
-  <script type="text/javascript" defer>''use strict'
+  </style>
+  <script defer>
+'use strict'
 const DIGITS = '0123456789'
 const NUMBERS = /(-?[[0-9]+\.?[0-9]*|-?[0-9]*\.[0-9]+]|-?π|-?e)/
 const NUMERIC_SYMBOLS = 'πe'
@@ -65,10 +68,9 @@ const POSTS = NUMERIC_SYMBOLS + '(√lscta'
 
 let inp, oup, str, mem
 
-String.prototype.splice = function(start, delCount, s) {
-  return this.substring(0, start) + s + this.substring(sta
-
-  return fact
+String.prototype.splice = function(start, delCount, s)
+{
+  return this.substring(0, start) + s + this.substring(start + delCount)
 }
 
 
@@ -171,16 +173,8 @@ function change_keyset()
   const keyset_1 = document.getElementById('keyset_1')
   const keyset_2 = document.getElementById('keyset_2')
 
-  if (keyset_1.hidden)
-  {
-    keyset_1.hidden = false
-    keyset_2.hidden = true
-  }
-  else
-  {
-    keyset_1.hidden = true
-    keyset_2.hidden = false
-  }
+  keyset1.classList.toggle("hidden")
+  ketset2.classList.toggle("hidden")
 }
 
 
@@ -188,7 +182,7 @@ function store()
 {
   if (str)
   {
-    mem = st
+    mem = str
   }
 }
 
@@ -504,12 +498,14 @@ function func_p(fun, s)
     <p id="oup">0</p>
     <input type="text" id="inp" value="0" />
     <div id="keypad">
-      <button onclick="change_keyset()">Shift</button>
-      <button onclick="store()">M+</button>
-      <button onclick="recall()">MR</button>
-      <button onclick="key_in('(')">(</button>
-      <button onclick="key_in(')')">)</button>
-      <div id="keyset_1">
+      <div class="ketset">
+        <button onclick="change_keyset()">Shift</button>
+        <button onclick="store()">M+</button>
+        <button onclick="recall()">MR</button>
+        <button onclick="key_in('(')">(</button>
+        <button onclick="key_in(')')">)</button>
+      </div>
+      <div id="keyset_1" class="keyset">
       <button onclick="key_in('sin(')">sin</button>
       <button onclick="key_in('cos(')">cos</button>
       <button onclick="key_in('tan(')">tan</button>
@@ -541,7 +537,7 @@ function func_p(fun, s)
       <button onclick="key_in('.')">.</button>
       <button onclick="compute()">=</button>
     </div>
-    <div id="keyset_2" hidden="true">
+    <div id="keyset_2" class="keyset hidden">
       <button onclick="key_in('arcsin(')">asin</button>
       <button onclick="key_in('arccos(')">acos</button>
       <button onclick="key_in('arctan(')">atan</button>
