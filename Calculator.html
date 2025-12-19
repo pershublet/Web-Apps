@@ -16,6 +16,7 @@ body
 p
 {
   margin: 0;
+  background-color: 
   text-align: right;
   font-size: 32px;
 }
@@ -498,7 +499,7 @@ function func_p(fun, s)
 <body>
   <div id="calculator">
     <p id="oup">0</p>
-    <input type="text" id="inp" value="0" />
+    <input type="text" id="inp" value="0">
     <div id="keypad">
       <div class="keyset">
         <button onclick="change_keyset()">Shift</button>
@@ -538,8 +539,8 @@ function func_p(fun, s)
       <button onclick="key_in('π')">π</button>
       <button onclick="key_in('.')">.</button>
       <button onclick="compute()">=</button>
-    </div>
-    <div id="keyset_2" class="keyset hidden">
+      </div>
+      <div id="keyset_2" class="keyset hidden">
       <button onclick="key_in('arcsin(')">asin</button>
       <button onclick="key_in('arccos(')">acos</button>
       <button onclick="key_in('arctan(')">atan</button>
@@ -570,7 +571,7 @@ function func_p(fun, s)
       <button onclick="key_in(',')">,</button>
       <button onclick="key_in('.')">.</button>
       <button onclick="compute()">=</button>
-    </div>
+      </div>
     </div>
   </div>
 </body>
