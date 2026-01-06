@@ -56,7 +56,7 @@ button
   box-sizing: border-box;
   grid-template-columns: repeat(5, 1fr);
   gap: 1%;
-  margin-top: 1% 0 2% 0;
+  margin-top: 1% 0 1% 0;
 }
 
 
@@ -507,14 +507,12 @@ function func_p(fun, s)
     <p id="oup">0</p>
     <input type="text" id="inp" value="0">
     <div id="keypad">
-      <div class="keyset">
+      <div class="keyset_1" class="keyset">
         <button onclick="change_keyset()">Shift</button>
         <button onclick="store()">M+</button>
         <button onclick="recall()">MR</button>
         <button onclick="key_in('(')">(</button>
         <button onclick="key_in(')')">)</button>
-      </div>
-      <div id="keyset_1" class="keyset">
       <button onclick="key_in('sin(')">sin</button>
       <button onclick="key_in('cos(')">cos</button>
       <button onclick="key_in('tan(')">tan</button>
@@ -547,6 +545,11 @@ function func_p(fun, s)
       <button onclick="compute()">=</button>
       </div>
       <div id="keyset_2" class="keyset hidden">
+        <button onclick="change_keyset()">Shift</button>
+        <button onclick="store()">M+</button>
+        <button onclick="recall()">MR</button>
+        <button onclick="key_in('(')">(</button>
+        <button onclick="key_in(')')">)</button>
       <button onclick="key_in('arcsin(')">asin</button>
       <button onclick="key_in('arccos(')">acos</button>
       <button onclick="key_in('arctan(')">atan</button>
