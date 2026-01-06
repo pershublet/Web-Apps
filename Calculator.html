@@ -32,11 +32,21 @@ input[type='text']
 }
 
 
+@media (max-width: 480px)
 button
 {
-  height: 7vh;
-  border-radius: 12px;
-  font-size: 1.2em;
+  height: 6vh;
+  border-radius: 0.3em;
+  font-size: 0.5em;
+}
+
+
+@media (min-width: 481px)
+button
+{
+  height: 8vh;
+  border-radius: 1em;
+  font-size: 3em;
 }
 
 
@@ -44,7 +54,7 @@ button
 {
   width: 98%;
   border-radius: 10px;
-  margin: 17vh auto 0;
+  margin: 18vh auto 0;
   padding: 1%;
   background-color :grey;
 }
