@@ -181,7 +181,7 @@ function del()
 
 function key_in(value)
 {
-  if (inp.value == '0' && value != '.')
+  if (inp.value == '0' && !['.','!','^2'].includes(value))
   {
     inp.value = value
   }
