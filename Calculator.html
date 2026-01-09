@@ -88,6 +88,7 @@ const FUNS_6 = [ 'arcsin', 'arccos', 'arctan' ]
 const FUNS_P = [ 'Px==', 'PX<=', 'PX>=' ]
 const PRES = NUMERIC + '!)'
 const POSTS = NUMERIC_SYMBOLS + '(√lscta'
+const facts = [ 1 ]
 let inp, oup, keyset1, keyset2, str, mem
 
 document.addEventListener("DOMContentLoaded", () =>
@@ -104,27 +105,26 @@ String.prototype.splice = function(start, delCount, s)
 }
 
 
-function nPk(n, k)
-{
-  if (k > n)
-  {
-    return 0
+function fact(n) {
+  if (n >= facts.size) {
+    facts.push( n * fact(n - 1) )
   }
 
-  let res = 1
-
-  for (let i = n; i > n - k; i--)
-  {
-    res *= i
-  }
-
-  return res
+  return facts
 }
 
 
-function nCk(n, k)
-{
-  return nPk(n, k) / factorial(k)
+function nPk(n, k) {
+  if (k > n) {
+    return 0
+  }
+
+  return fact(n) / fact(n - k)
+}
+
+
+function nCk(n, k) {
+  return nPk(n, k) / fact(k)
 }
 
 
