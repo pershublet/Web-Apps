@@ -107,7 +107,7 @@ String.prototype.splice = function(start, delCount, s)
 
 
 function fact(n) {
-  if (n >facts.length) {
+  if (n <= facts.length) {
     facts.push( n * fact(n - 1) )
   }
 
