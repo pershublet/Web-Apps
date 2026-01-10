@@ -89,6 +89,7 @@ const FUNS_6 = [ 'arcsin', 'arccos', 'arctan' ]
 const FUNS_P = [ 'Px==', 'PX<=', 'PX>=' ]
 const PRES = NUMERIC + '!)'
 const POSTS = NUMERIC_SYMBOLS + '(√lscta'
+const KEEP_ZERO_VALUES = [ '.', '+', '-', '×', '/', '%' , '^2', '!' ]
 const facts = [ 1 ]
 let inp, oup, keyset1, keyset2, str, mem
 
@@ -107,7 +108,7 @@ String.prototype.splice = function(start, delCount, s)
 
 
 function fact(n) {
-  if (n <= facts.length) {
+  if (n >= facts.length) {
     facts.push( n * fact(n - 1) )
   }
 
@@ -182,7 +183,7 @@ function del()
 
 function key_in(value)
 {
-  if (inp.value == '0' && !['.','!','^2'].includes(value))
+  if (inp.value == '0' && !KEEP_ZERO_VALUES.includes(value))
   {
     inp.value = value
   }
