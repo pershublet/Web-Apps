@@ -79,6 +79,7 @@ input[type='text']
   </style>
   <script>
 'use strict'
+
 const DIGITS = '0123456789'
 const NUMBERS = /(-?[[0-9]+\.?[0-9]*|-?[0-9]*\.[0-9]+]|-?π|-?e)/
 const NUMERIC_SYMBOLS = 'πe'
@@ -106,7 +107,7 @@ String.prototype.splice = function(start, delCount, s)
 
 
 function fact(n) {
-  if (n >= facts.size) {
+  if (n >facts.length) {
     facts.push( n * fact(n - 1) )
   }
 
