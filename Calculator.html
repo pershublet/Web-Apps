@@ -254,7 +254,7 @@ function prepare()
     NUMERIC.includes(str[i]) && (NUMERIC_SYMBOLS + ')').includes(str[i - 1]) ||
     NUMERIC_SYMBOLS.includes(str[i]) && NUMERIC.includes(str[i - 1]))
     {
-      str = str.splice(i, 0, '*')
+      str = str.splice(i, 0, '×')
       i++
     }
 
@@ -409,7 +409,7 @@ function calculate(s)
   {
     if (arr[i] == '!')
     {
-      arr.splice(i - 1, 2, (factorial(parseFloat(arr[i-1]))).toString())
+      arr.splice(i - 1, 2, fact(parseFloat(arr[i - 1])).toString())
       i--
     }
   }
@@ -427,7 +427,7 @@ function calculate(s)
   {
     switch (arr[i])
     {
-      case '*':
+      case '×':
         arr.splice(i - 1, 3, (parseFloat(arr[i-1]) * parseFloat(arr[i+1])).toString())
         i--
         break
@@ -545,7 +545,7 @@ function func_p(fun, s)
       <button onclick="key_in(4)">4</button>
       <button onclick="key_in(5)">5</button>
       <button onclick="key_in(6)">6</button>
-      <button onclick="key_in('*')">*</button>
+      <button onclick="key_in('×')">×</button>
       <button onclick="key_in('/')">/</button>
       <button onclick="key_in(1)">1</button>
       <button onclick="key_in(2)">2</button>
@@ -582,7 +582,7 @@ function func_p(fun, s)
       <button onclick="key_in(4)">4</button>
       <button onclick="key_in(5)">5</button>
       <button onclick="key_in(6)">6</button>
-      <button onclick="key_in('*')">*</button>
+      <button onclick="key_in('×')">×</button>
       <button onclick="key_in('/')">/</button>
       <button onclick="key_in(1)">1</button>
       <button onclick="key_in(2)">2</button>
