@@ -85,8 +85,7 @@ const NUMBERS = /(-?[[0-9]+\.?[0-9]*|-?[0-9]*\.[0-9]+]|-?π|-?e)/
 const NUMERIC_SYMBOLS = 'πe'
 const NUMERIC = DIGITS + NUMERIC_SYMBOLS
 const FUNS_3 = [ 'log', 'sin', 'cos', 'tan' ]
-const FUNS_4 = [ 'asin', 'acos', 'atan' ]
-const FUNS_P = [ 'Px==', 'PX<=', 'PX>=' ]
+const FUNS_4 = [ 'asin', 'acos', 'atan', 'Px==', 'PX<=', 'PX>=' ]
 const PRES = NUMERIC + '!)'
 const POSTS = NUMERIC_SYMBOLS + '(√lscta'
 const KEEP_ZERO_VALUES = [ '.', '+', '-', '×', '÷', '%' , '^2', '!' ]
@@ -312,15 +311,11 @@ function pair_braces()
               str = str.splice(ob - 1, i + 1, Math.pow(calculate(sub),0.5).toString())
             }
           }
-          else if (FUNS_P.includes(str.substring(ob - 4, ob)))
-          {
-            str = str.splice(ob - 4, i + 1, func_p(str.substring(ob - 4, ob), sub).toString())
-          }
-            else if (FUNS_4.includes(str.substring(ob - 4, ob)))
+          else if (FUNS_4.includes(str.substring(ob - 4, ob)))
           {
             str = str.splice(ob - 4, i + 1, func(str.substring(ob - 4, ob), sub).toString())
           }
-            else if (FUNS_3.includes(str.substring(ob - 3, ob)))
+          else if (FUNS_3.includes(str.substring(ob - 3, ob)))
           {
             str = str.splice(ob - 3, i + 1, func(str.substring(ob - 3, ob), sub).toString())
           }
@@ -474,6 +469,7 @@ function calculate(s)
 function func(fun, s)
 {
   const res = calculate(s)
+  const inputs = s.split(',').map(Number)
 
   switch (fun)
   {
@@ -491,18 +487,6 @@ function func(fun, s)
       return Math.acos(res) * 180 / Math.PI
     case 'atan':
       return Math.atan(res) * 180 / Math.PI
-  }
-
-  return 0
-}
-
-
-function func_p(fun, s)
-{
-  const inputs = s.split(',').map(Number)
-
-  switch (fun)
-  {
     case 'Px==':
       return exact(inputs[0], inputs[1], inputs[2])
     case 'PX<=':
